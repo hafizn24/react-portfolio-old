@@ -1,9 +1,9 @@
 import API_1 from "./API_1"
 
-function API() {
+function API({character, image}) {
   return (
     <div>
-        <API_1 />
+        <API_1 character={character} image={image}/>
     </div>
   )
 }
