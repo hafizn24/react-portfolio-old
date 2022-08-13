@@ -1,6 +1,8 @@
 import API_1 from "./API_1"
 import API_2 from "./API_2"
 
+import { Button } from "@mui/material"
+
 import React, {useEffect, useState} from "react"
 
 function API() {
@@ -9,6 +11,7 @@ function API() {
   const[listspecies, setlistspecies] = useState('')
   const[liststatus, setliststatus] = useState('')
   const[randomnumber, setrandomnumber] = useState(0)
+  const[listlength, setlistlength] = useState("")
   
   useEffect(() => {
     const url = 'https://rickandmortyapi.com/api/character'
@@ -36,6 +39,7 @@ function API() {
         setlistimage(tempimage)
         setlistspecies(tempspecies)
         setliststatus(tempstatues)
+        setlistlength(json.results.length)
       }
       catch(error){
         console.log('error')
@@ -45,12 +49,16 @@ function API() {
     fetchData()
   },[])
 
-  
+  function onClick(){
+    setrandomnumber(Math.floor(Math.random() * listlength))
+  }
   
   return (
     <div>
-
       <API_1 listname={listname[randomnumber]} listimage={listimage[randomnumber]}/>
+      <Button variant="contained" color="success" onClick={onClick}>
+        Random
+      </Button>
       <h2>Species</h2>
       <API_2 list={listspecies}/>
       <h2>Status</h2>
