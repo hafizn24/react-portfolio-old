@@ -1,10 +1,9 @@
-function API_1({character, image}) {
-  
+function API_1({listname, listimage}) {
 
   return (
     <div>
-        {character}
-        <img src={image} alt="Image" />
+        {listname}
+        <img src={listimage} alt="Image" />
     </div>
   )
 }
