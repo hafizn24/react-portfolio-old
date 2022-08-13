@@ -17,8 +17,6 @@ function API() {
         const response = await fetch(url)
         const json = await response.json()
 
-        console.log(json)
-
         const tempname = []
         const tempimage = []
         const tempspecies = []
