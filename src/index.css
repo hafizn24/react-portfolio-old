@@ -1,9 +1,8 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: rgb(27, 27, 29);
+  background-color: rgb(15, 20, 60);
   color: rgb(122, 157, 79);
-  padding-top: 20px;
 }
 
 .cert{
@@ -11,7 +10,7 @@ body {
   height: 360px;
 }
 
-.link{
+.navbar-text {
+  color: #f9fbe7;
   text-decoration: none;
-  color: rgb(122, 157, 79);
 }
