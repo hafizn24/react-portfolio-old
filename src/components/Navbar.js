@@ -42,7 +42,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LEGO
+            Logo
           </Typography>
           <Box sx={{ flexGrow: 1, display: "flex"}}>
             {pages.map((page) => (
