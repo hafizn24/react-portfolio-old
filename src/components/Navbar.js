@@ -1,13 +1,14 @@
 import {Link, Outlet} from "react-router-dom"
+import { AppBar } from "@mui/material"
 
 function Navbar() {
   return (
     <div>
-        <ul>
-            <li><Link to={'/'}>Home</Link></li>
-            <li><Link to={'/api'}>API</Link></li>
-        </ul>
+      <AppBar style={{background:"white"}}>
+        <Link to={'/'} className="link">Home</Link>
+        <Link to={'/rick-morty-api'} className="link">API</Link>
         <Outlet />
+      </AppBar>
     </div>
   )
 }

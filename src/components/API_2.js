@@ -16,7 +16,10 @@ function API_2({list}) {
 
   const unique = [...new Set(list)]
   const count = countFunc()
-  const countDisplay = Array.from(count.entries(), ([key, value]) => <p>{key + ": " + value}</p>  )
+  const countDisplay = Array.from(
+    count.entries(), ([key, value]) => 
+    <p>{key + ": " + value}</p>
+  )
 
   return (
     <div>

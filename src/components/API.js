@@ -8,6 +8,7 @@ function API() {
   const[listimage, setlistimage] = useState("")
   const[listspecies, setlistspecies] = useState('')
   const[liststatus, setliststatus] = useState('')
+  const[randomnumber, setrandomnumber] = useState(0)
   
   useEffect(() => {
     const url = 'https://rickandmortyapi.com/api/character'
@@ -21,6 +22,8 @@ function API() {
         const tempimage = []
         const tempspecies = []
         const tempstatues = []
+
+        setrandomnumber(Math.floor(Math.random() * json.results.length))
 
         for(let i in json.results){
           tempname.push(json.results[i].name)
@@ -42,11 +45,16 @@ function API() {
     fetchData()
   },[])
 
+  
+  
   return (
     <div>
-        <API_1 listname={listname[1]} listimage={listimage[1]}/>
-        <API_2 list={listspecies}/>
-        <API_2 list={liststatus}/>
+
+      <API_1 listname={listname[randomnumber]} listimage={listimage[randomnumber]}/>
+      <h2>Species</h2>
+      <API_2 list={listspecies}/>
+      <h2>Status</h2>
+      <API_2 list={liststatus}/>
     </div>
   )
 }

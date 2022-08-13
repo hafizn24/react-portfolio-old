@@ -2,8 +2,9 @@ function API_1({listname, listimage}) {
 
   return (
     <div>
-        {listname}
-        <img src={listimage} alt="Image" />
+      <br />
+      <img src={listimage} alt= {listname}/>
+      <h3>{listname}</h3>
     </div>
   )
 }
