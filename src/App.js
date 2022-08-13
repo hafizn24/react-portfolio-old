@@ -13,16 +13,6 @@ function App() {
         <Route path="/rick-morty-api" element={<API/>}/>
       </Routes>
     </BrowserRouter>
-    
-
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Navbar/>}>
-    //       <Route path="/" element={<Homepage/>}/>
-    //       <Route path="/api" element={<API/>}/>
-    //     </Route>
-    //   </Routes>
-    // </BrowserRouter>
   );
 }
 

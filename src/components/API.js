@@ -56,7 +56,7 @@ function API() {
   return (
     <div>
       <API_1 listname={listname[randomnumber]} listimage={listimage[randomnumber]}/>
-      <Button variant="contained" color="success" onClick={onClick}>
+      <Button variant="contained" color="success" onClick={onClick} style={{fontFamily:"Lato", fontWeight:"bolder"}}>
         Random
       </Button>
       <h2>Species</h2>
