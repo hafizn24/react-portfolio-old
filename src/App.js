@@ -10,12 +10,6 @@ let theme = createTheme({
     primary: {
       main: '#1e1b1b',
     },
-    background: {
-      default: '#0d153b',
-    },
-    text: {
-      primary: '#f9fbe7',
-    },
   },
 });
 
