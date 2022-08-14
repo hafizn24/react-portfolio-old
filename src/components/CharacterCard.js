@@ -4,7 +4,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 
-const CharacterCard = ({name, image, gender, location, species, status }) =>{
+import { Button } from "@mui/material"
+
+const CharacterCard = ({name, image, gender, location, species, status, onClick }) =>{
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -14,7 +16,7 @@ const CharacterCard = ({name, image, gender, location, species, status }) =>{
         image={image}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography  variant="h5" component="div">
           {name}
         </Typography>
         <Typography variant="body2" color="text.secondary">

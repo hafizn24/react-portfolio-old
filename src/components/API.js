@@ -1,5 +1,5 @@
 import CharacterCard from './CharacterCard'
-import API_2 from "./API_2"
+import StatisticsCard from './StatisticsCard'
 import { Button } from "@mui/material"
 import React, {useEffect, useState} from "react"
 
@@ -68,14 +68,14 @@ function API() {
       location={listlocation[randomnumber]}
       species={listspecies[randomnumber]}
       status={liststatus[randomnumber]}
+      onClick={onClick}
       />
       <Button variant="contained" color="success" onClick={onClick} style={{fontFamily:"Lato", fontWeight:"bolder"}}>
         Random
       </Button>
-      <h2>Species</h2>
-      <API_2 list={listspecies}/>
-      <h2>Status</h2>
-      <API_2 list={liststatus}/>
+
+      <StatisticsCard list={listspecies} title="Species" />
+      <StatisticsCard list={liststatus} title="Status" />
     </div>
   )
 }
