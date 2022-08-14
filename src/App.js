@@ -4,18 +4,21 @@ import API from "./components/API";
 
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import { createTheme, ThemeProvider } from "@mui/material/styles"
+import CssBaseline from '@mui/material/CssBaseline'
 
 let theme = createTheme({
   palette: {
-    primary: {
-      main: '#1e1b1b',
-    },
+    mode: 'dark',
+  },
+  typography: {
+    fontFamily: 'Lato',
   },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline enableColorScheme />
       <BrowserRouter>
         <Navbar />
         <Routes>

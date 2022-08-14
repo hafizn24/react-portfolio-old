@@ -2,6 +2,7 @@ import CharacterCard from './CharacterCard'
 import StatisticsCard from './StatisticsCard'
 import { Button } from "@mui/material"
 import React, {useEffect, useState} from "react"
+import { Box, flexbox, maxWidth } from '@mui/system'
 
 function API() {
   const[listname, setlistname] = useState("")
@@ -60,23 +61,44 @@ function API() {
   }
   
   return (
-    <div>
-      <CharacterCard 
-      name={listname[randomnumber]} 
-      image={listimage[randomnumber]}  
-      gender={listgender[randomnumber]}
-      location={listlocation[randomnumber]}
-      species={listspecies[randomnumber]}
-      status={liststatus[randomnumber]}
-      onClick={onClick}
-      />
-      <Button variant="contained" color="success" onClick={onClick} style={{fontFamily:"Lato", fontWeight:"bolder"}}>
-        Random
-      </Button>
-
-      <StatisticsCard list={listspecies} title="Species" />
-      <StatisticsCard list={liststatus} title="Status" />
-    </div>
+    <Box style={{
+      display:"flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
+    }}>
+      <Box
+        sx={{
+          flexDirection: "column",
+          display: "flex",
+          maxWidth: "300px",
+          p: 1,
+        }}
+      >
+        <CharacterCard 
+        name={listname[randomnumber]} 
+        image={listimage[randomnumber]}  
+        gender={listgender[randomnumber]}
+        location={listlocation[randomnumber]}
+        species={listspecies[randomnumber]}
+        status={liststatus[randomnumber]}
+        />
+        <Button variant="contained" color="success" onClick={onClick} style={{fontFamily:"Lato", fontWeight:"bolder"}}>
+          Random
+        </Button>
+      </Box>
+      <Box
+        sx={{
+          flexDirection: "row",
+          display: "flex",
+          maxWidth: "350px",
+          p: 1,
+        }}
+      >
+        <StatisticsCard list={listspecies} title="Species" />
+        <StatisticsCard list={liststatus} title="Status" />
+      </Box>
+    </Box>
   )
 }
 
