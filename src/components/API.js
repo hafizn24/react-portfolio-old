@@ -1,8 +1,6 @@
-import API_1 from "./API_1"
+import CharacterCard from './CharacterCard'
 import API_2 from "./API_2"
-
 import { Button } from "@mui/material"
-
 import React, {useEffect, useState} from "react"
 
 function API() {
@@ -12,6 +10,8 @@ function API() {
   const[liststatus, setliststatus] = useState('')
   const[randomnumber, setrandomnumber] = useState(0)
   const[listlength, setlistlength] = useState("")
+  const[listgender, setlistgender] = useState("")
+  const[listlocation, setlistlocation] = useState("")
   
   useEffect(() => {
     const url = 'https://rickandmortyapi.com/api/character'
@@ -25,6 +25,8 @@ function API() {
         const tempimage = []
         const tempspecies = []
         const tempstatues = []
+        const templocation = []
+        const tempgender = []
 
         setrandomnumber(Math.floor(Math.random() * json.results.length))
 
@@ -33,6 +35,8 @@ function API() {
           tempimage.push(json.results[i].image)
           tempspecies.push(json.results[i].species)
           tempstatues.push(json.results[i].status)
+          tempgender.push(json.results[i].gender)
+          templocation.push(json.results[i].location.name)
         }
 
         setlistname(tempname)
@@ -40,6 +44,8 @@ function API() {
         setlistspecies(tempspecies)
         setliststatus(tempstatues)
         setlistlength(json.results.length)
+        setlistgender(tempgender)
+        setlistlocation(templocation)
       }
       catch(error){
         console.log('error')
@@ -55,7 +61,14 @@ function API() {
   
   return (
     <div>
-      <API_1 listname={listname[randomnumber]} listimage={listimage[randomnumber]}/>
+      <CharacterCard 
+      name={listname[randomnumber]} 
+      image={listimage[randomnumber]}  
+      gender={listgender[randomnumber]}
+      location={listlocation[randomnumber]}
+      species={listspecies[randomnumber]}
+      status={liststatus[randomnumber]}
+      />
       <Button variant="contained" color="success" onClick={onClick} style={{fontFamily:"Lato", fontWeight:"bolder"}}>
         Random
       </Button>
