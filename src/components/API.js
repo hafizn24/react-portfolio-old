@@ -3,6 +3,7 @@ import StatisticsCard from './StatisticsCard'
 import { Button } from "@mui/material"
 import React, {useEffect, useState} from "react"
 import { Box, flexbox, maxWidth } from '@mui/system'
+import Divider from '@mui/material/Divider'
 
 function API() {
   const[listname, setlistname] = useState("")
@@ -87,6 +88,7 @@ function API() {
           Random
         </Button>
       </Box>
+      <Divider style={{width:'95%'}}/>
       <Box
         sx={{
           flexDirection: "row",

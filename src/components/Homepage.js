@@ -1,12 +1,20 @@
-import Homepage_1 from "./Homepage_1"
-import Homepage_2 from "./Homepage_2"
+import Biodata from "./Biodata"
+import { Box, Divider } from "@mui/material"
+import Cert from "./Cert"
+import Typography from '@mui/material/Typography';
+
+
 
 function Homepage() {
   return (
-    <div>
-        <Homepage_1 />
-        <Homepage_2 />
-    </div>
+    <Box>
+      <Biodata/>
+      <Divider variant='middle'/>
+      <Typography component="div" variant="h3">
+        <center>CERTIFICATES</center>
+      </Typography>
+      <Cert />
+    </Box>
   )
 }
 
