@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import { Grid } from '@mui/material';
 import { DiPython, DiHtml5, DiCss3, DiJavascript1, DiMysql, DiPhp, DiJava, DiMongodb } from "react-icons/di";
 import { SiTensorflow, SiJupyter, SiRstudio } from "react-icons/si"
+import { FaLinkedin } from "react-icons/fa"
 
 import hafiz from './img/hafiz.jpg'
 
@@ -34,7 +35,11 @@ function Biodata() {
                     <Typography component="div" variant="h4">
                         Muhammad Hafiz Bin Mohd Nasarudin
                     </Typography>
-                    <br />
+                    <CardContent sx={{
+                        textDecoration: "none"
+                    }}>
+                    <a href="https://www.linkedin.com/in/muhammad-hafiz-bin-mohd-nasarudin-7a73171ab/" target="_blank"><FaLinkedin size={iconsize}/></a>
+                    </CardContent>
                     <Typography variant="body1" color="text.secondary" component="div">
                         PROGRAMMING LANGUAGES & TOOLS
                     </Typography>
