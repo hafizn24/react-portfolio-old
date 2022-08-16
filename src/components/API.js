@@ -1,9 +1,11 @@
 import CharacterCard from './CharacterCard'
 import StatisticsCard from './StatisticsCard'
+import Chart from './Chart'
 import { Button } from "@mui/material"
 import React, {useEffect, useState} from "react"
 import { Box, flexbox, maxWidth } from '@mui/system'
 import Divider from '@mui/material/Divider'
+import Typography from '@mui/material/Typography';
 
 function API() {
   const[listname, setlistname] = useState("")
@@ -91,14 +93,38 @@ function API() {
       <Divider style={{width:'95%'}}/>
       <Box
         sx={{
-          flexDirection: "row",
+          flexDirection: "column",
           display: "flex",
           maxWidth: "350px",
           p: 1,
+          justifyContent: "center",
+          alignItems: "center",
         }}
       >
-        <StatisticsCard list={listspecies} title="Species" />
-        <StatisticsCard list={liststatus} title="Status" />
+        <Typography component="div" variant="h4">
+          Species
+        </Typography>
+        <Chart list={listspecies} title="Species"/>
+        <br />
+        <StatisticsCard list={listspecies} title="Species"/>
+      </Box>
+      <br />
+      <Box
+        sx={{
+          flexDirection: "column",
+          display: "flex",
+          maxWidth: "350px",
+          p: 1,
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography component="div" variant="h4">
+          Status
+        </Typography>
+        <Chart list={liststatus} title="Status"/>
+        <br />
+        <StatisticsCard list={liststatus} title="Status"/>
       </Box>
     </Box>
   )
