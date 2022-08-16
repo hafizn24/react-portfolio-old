@@ -38,7 +38,7 @@ function Biodata() {
                     <CardContent sx={{
                         textDecoration: "none"
                     }}>
-                    <a href="https://www.linkedin.com/in/muhammad-hafiz-bin-mohd-nasarudin-7a73171ab/" target="_blank"><FaLinkedin size={iconsize}/></a>
+                    <a style={{textDecoration:'none', color:'white'}} href="https://www.linkedin.com/in/muhammad-hafiz-bin-mohd-nasarudin-7a73171ab/" target="_blank"><FaLinkedin size={iconsize}/></a>
                     </CardContent>
                     <Typography variant="body1" color="text.secondary" component="div">
                         PROGRAMMING LANGUAGES & TOOLS
