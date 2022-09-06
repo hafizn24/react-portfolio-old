@@ -50,6 +50,9 @@ function API() {
         setlistlength(json.results.length)
         setlistgender(tempgender)
         setlistlocation(templocation)
+        
+        console.log(typeof(tempname))
+        console.log(tempname)
       }
       catch(error){
         console.log('error')
